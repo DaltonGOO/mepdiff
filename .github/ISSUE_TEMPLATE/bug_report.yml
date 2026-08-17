@@ -1,0 +1,48 @@
+name: Bug report
+description: Something produced a wrong or surprising diff.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Do not attach client or project models.** If a model is needed to
+        reproduce, please reduce it to the smallest scrubbed export that still
+        shows the problem. See CONTRIBUTING.md.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What mepdiff reported, and what you expected it to report.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: The exact command, and how the two snapshots differ.
+      render: shell
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: mepdiff version
+      placeholder: "0.0.0, or a commit SHA"
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Snapshot source
+      description: IFC schema and exporter, or Revit version, if relevant.
+      placeholder: "IFC4 exported from Revit 2025"
+
+  - type: input
+    id: env
+    attributes:
+      label: OS and Python
+      placeholder: "Windows 11, Python 3.12"

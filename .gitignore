@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Local scratch. Real project models must never be committed to this public
+# repo -- see CONTRIBUTING.md on scrubbing fixtures.
+scratch/
+*.local.*
+
+# Revit / IFC working files that are not deliberate, scrubbed fixtures.
+*.rvt
+*.rfa
+*.rte
+*.ifc
+*.ifczip
+!tests/fixtures/**/*.ifc
