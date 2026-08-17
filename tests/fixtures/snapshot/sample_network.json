@@ -1,0 +1,410 @@
+{
+  "connections": [
+    {
+      "id": "conn.ahu.AHU-1#0--seg.SEG-1#0",
+      "port_ids": [
+        "ahu.AHU-1#p0",
+        "seg.SEG-1#p0"
+      ]
+    },
+    {
+      "id": "conn.box.VAV-12#1--seg.SEG-4#0",
+      "port_ids": [
+        "box.VAV-12#p1",
+        "seg.SEG-4#p0"
+      ]
+    },
+    {
+      "id": "conn.box.VAV-13#1--seg.SEG-5#0",
+      "port_ids": [
+        "box.VAV-13#p1",
+        "seg.SEG-5#p0"
+      ]
+    },
+    {
+      "id": "conn.fit.TEE-1#1--seg.SEG-2#0",
+      "port_ids": [
+        "fit.TEE-1#p1",
+        "seg.SEG-2#p0"
+      ]
+    },
+    {
+      "id": "conn.fit.TEE-1#2--seg.SEG-3#0",
+      "port_ids": [
+        "fit.TEE-1#p2",
+        "seg.SEG-3#p0"
+      ]
+    },
+    {
+      "id": "conn.seg.SEG-1#1--fit.TEE-1#0",
+      "port_ids": [
+        "fit.TEE-1#p0",
+        "seg.SEG-1#p1"
+      ]
+    },
+    {
+      "id": "conn.seg.SEG-2#1--box.VAV-12#0",
+      "port_ids": [
+        "box.VAV-12#p0",
+        "seg.SEG-2#p1"
+      ]
+    },
+    {
+      "id": "conn.seg.SEG-3#1--box.VAV-13#0",
+      "port_ids": [
+        "box.VAV-13#p0",
+        "seg.SEG-3#p1"
+      ]
+    },
+    {
+      "id": "conn.seg.SEG-4#1--term.DIFF-101#0",
+      "port_ids": [
+        "seg.SEG-4#p1",
+        "term.DIFF-101#p0"
+      ]
+    },
+    {
+      "id": "conn.seg.SEG-5#1--term.DIFF-102#0",
+      "port_ids": [
+        "seg.SEG-5#p1",
+        "term.DIFF-102#p0"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "flow_rate": 0.377557955,
+      "id": "ahu.AHU-1",
+      "kind": "equipment",
+      "mark": "AHU-1",
+      "name": "AHU-1",
+      "placement": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "properties": {
+        "Level": "L1",
+        "Manufacturer": "Acme"
+      },
+      "source_class": "IfcUnitaryEquipment",
+      "source_id": "gid-ahu.AHU-1",
+      "system_ids": [
+        "sys.SA-1"
+      ]
+    },
+    {
+      "flow_rate": 0.188778977,
+      "id": "box.VAV-12",
+      "kind": "terminal_box",
+      "mark": "VAV-12",
+      "name": "VAV-12",
+      "placement": {
+        "x": 6.0,
+        "y": 6.0,
+        "z": 3.0
+      },
+      "pressure_drop": 87.181115,
+      "properties": {
+        "Level": "L1"
+      },
+      "source_class": "IfcAirTerminalBox",
+      "source_id": "gid-box.VAV-12",
+      "system_ids": [
+        "sys.SA-1"
+      ]
+    },
+    {
+      "flow_rate": 0.188778977,
+      "id": "box.VAV-13",
+      "kind": "terminal_box",
+      "mark": "VAV-13",
+      "name": "VAV-13",
+      "placement": {
+        "x": 6.0,
+        "y": -6.0,
+        "z": 3.0
+      },
+      "pressure_drop": 87.181115,
+      "properties": {
+        "Level": "L1"
+      },
+      "source_class": "IfcAirTerminalBox",
+      "source_id": "gid-box.VAV-13",
+      "system_ids": [
+        "sys.SA-1"
+      ]
+    },
+    {
+      "id": "fit.TEE-1",
+      "kind": "fitting",
+      "name": "fit.TEE-1",
+      "placement": {
+        "x": 6.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "pressure_drop": 12.454445,
+      "source_class": "IfcDuctFitting",
+      "source_id": "gid-fit.TEE-1",
+      "system_ids": [
+        "sys.SA-1"
+      ]
+    },
+    {
+      "id": "seg.SEG-1",
+      "kind": "segment",
+      "length": 6.0,
+      "name": "seg.SEG-1",
+      "placement": {
+        "x": 3.0,
+        "y": 0.0,
+        "z": 3.0
+      },
+      "pressure_drop": 29.890668,
+      "source_class": "IfcDuctSegment",
+      "source_id": "gid-seg.SEG-1",
+      "system_ids": [
+        "sys.SA-1"
+      ]
+    },
+    {
+      "id": "seg.SEG-2",
+      "kind": "segment",
+      "length": 4.0,
+      "name": "seg.SEG-2",
+      "placement": {
+        "x": 6.0,
+        "y": 3.0,
+        "z": 3.0
+      },
+      "pressure_drop": 19.927112,
+      "source_class": "IfcDuctSegment",
+      "source_id": "gid-seg.SEG-2",
+      "system_ids": [
+        "sys.SA-1"
+      ]
+    },
+    {
+      "id": "seg.SEG-3",
+      "kind": "segment",
+      "length": 4.0,
+      "name": "seg.SEG-3",
+      "placement": {
+        "x": 6.0,
+        "y": -3.0,
+        "z": 3.0
+      },
+      "pressure_drop": 19.927112,
+      "source_class": "IfcDuctSegment",
+      "source_id": "gid-seg.SEG-3",
+      "system_ids": [
+        "sys.SA-1"
+      ]
+    },
+    {
+      "id": "seg.SEG-4",
+      "kind": "segment",
+      "length": 2.5,
+      "name": "seg.SEG-4",
+      "placement": {
+        "x": 6.0,
+        "y": 8.0,
+        "z": 3.0
+      },
+      "source_class": "IfcDuctSegment",
+      "source_id": "gid-seg.SEG-4",
+      "system_ids": [
+        "sys.SA-1"
+      ]
+    },
+    {
+      "id": "seg.SEG-5",
+      "kind": "segment",
+      "length": 2.5,
+      "name": "seg.SEG-5",
+      "placement": {
+        "x": 6.0,
+        "y": -8.0,
+        "z": 3.0
+      },
+      "source_class": "IfcDuctSegment",
+      "source_id": "gid-seg.SEG-5",
+      "system_ids": [
+        "sys.SA-1"
+      ]
+    },
+    {
+      "flow_rate": 0.188778977,
+      "id": "term.DIFF-101",
+      "kind": "terminal",
+      "mark": "DIFF-101",
+      "name": "DIFF-101",
+      "placement": {
+        "x": 6.0,
+        "y": 10.0,
+        "z": 2.8
+      },
+      "source_class": "IfcAirTerminal",
+      "source_id": "gid-term.DIFF-101",
+      "system_ids": [
+        "sys.SA-1"
+      ]
+    },
+    {
+      "flow_rate": 0.188778977,
+      "id": "term.DIFF-102",
+      "kind": "terminal",
+      "mark": "DIFF-102",
+      "name": "DIFF-102",
+      "placement": {
+        "x": 6.0,
+        "y": -10.0,
+        "z": 2.8
+      },
+      "source_class": "IfcAirTerminal",
+      "source_id": "gid-term.DIFF-102",
+      "system_ids": [
+        "sys.SA-1"
+      ]
+    }
+  ],
+  "ports": [
+    {
+      "direction": "source",
+      "id": "ahu.AHU-1#p0",
+      "node_id": "ahu.AHU-1",
+      "system_id": "sys.SA-1"
+    },
+    {
+      "direction": "sink",
+      "id": "box.VAV-12#p0",
+      "node_id": "box.VAV-12",
+      "system_id": "sys.SA-1"
+    },
+    {
+      "direction": "source",
+      "id": "box.VAV-12#p1",
+      "node_id": "box.VAV-12",
+      "system_id": "sys.SA-1"
+    },
+    {
+      "direction": "sink",
+      "id": "box.VAV-13#p0",
+      "node_id": "box.VAV-13",
+      "system_id": "sys.SA-1"
+    },
+    {
+      "direction": "source",
+      "id": "box.VAV-13#p1",
+      "node_id": "box.VAV-13",
+      "system_id": "sys.SA-1"
+    },
+    {
+      "direction": "sink",
+      "id": "fit.TEE-1#p0",
+      "node_id": "fit.TEE-1",
+      "system_id": "sys.SA-1"
+    },
+    {
+      "direction": "source",
+      "id": "fit.TEE-1#p1",
+      "node_id": "fit.TEE-1",
+      "system_id": "sys.SA-1"
+    },
+    {
+      "direction": "source",
+      "id": "fit.TEE-1#p2",
+      "node_id": "fit.TEE-1",
+      "system_id": "sys.SA-1"
+    },
+    {
+      "direction": "sink",
+      "id": "seg.SEG-1#p0",
+      "node_id": "seg.SEG-1",
+      "system_id": "sys.SA-1"
+    },
+    {
+      "direction": "source",
+      "id": "seg.SEG-1#p1",
+      "node_id": "seg.SEG-1",
+      "system_id": "sys.SA-1"
+    },
+    {
+      "direction": "sink",
+      "id": "seg.SEG-2#p0",
+      "node_id": "seg.SEG-2",
+      "system_id": "sys.SA-1"
+    },
+    {
+      "direction": "source",
+      "id": "seg.SEG-2#p1",
+      "node_id": "seg.SEG-2",
+      "system_id": "sys.SA-1"
+    },
+    {
+      "direction": "sink",
+      "id": "seg.SEG-3#p0",
+      "node_id": "seg.SEG-3",
+      "system_id": "sys.SA-1"
+    },
+    {
+      "direction": "source",
+      "id": "seg.SEG-3#p1",
+      "node_id": "seg.SEG-3",
+      "system_id": "sys.SA-1"
+    },
+    {
+      "direction": "sink",
+      "id": "seg.SEG-4#p0",
+      "node_id": "seg.SEG-4",
+      "system_id": "sys.SA-1"
+    },
+    {
+      "direction": "source",
+      "id": "seg.SEG-4#p1",
+      "node_id": "seg.SEG-4",
+      "system_id": "sys.SA-1"
+    },
+    {
+      "direction": "sink",
+      "id": "seg.SEG-5#p0",
+      "node_id": "seg.SEG-5",
+      "system_id": "sys.SA-1"
+    },
+    {
+      "direction": "source",
+      "id": "seg.SEG-5#p1",
+      "node_id": "seg.SEG-5",
+      "system_id": "sys.SA-1"
+    },
+    {
+      "direction": "sink",
+      "id": "term.DIFF-101#p0",
+      "node_id": "term.DIFF-101",
+      "system_id": "sys.SA-1"
+    },
+    {
+      "direction": "sink",
+      "id": "term.DIFF-102#p0",
+      "node_id": "term.DIFF-102",
+      "system_id": "sys.SA-1"
+    }
+  ],
+  "schema_version": "1.0",
+  "source": {
+    "adapter": "fixture",
+    "adapter_version": "1",
+    "application": "mepdiff test fixture",
+    "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+    "source_format": "IFC4"
+  },
+  "systems": [
+    {
+      "classification": "supply_air",
+      "id": "sys.SA-1",
+      "name": "SA-1",
+      "source_id": "gid-sys-SA-1"
+    }
+  ]
+}

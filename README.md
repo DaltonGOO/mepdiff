@@ -74,8 +74,8 @@ core is proven.
 
 | | Milestone | Status |
 |---|---|---|
-| M0 | Repository scaffolding, CI, ADRs | in progress |
-| M1 | Snapshot IR and determinism guarantees | |
+| M0 | Repository scaffolding, CI, ADRs | done |
+| M1 | Snapshot IR and determinism guarantees | in progress |
 | M2 | IFC adapter: elements, ports, connections, systems | |
 | M3 | Graph construction and skeleton collapse | |
 | M4 | Flow orientation, reachability, orphans, rollups | |
