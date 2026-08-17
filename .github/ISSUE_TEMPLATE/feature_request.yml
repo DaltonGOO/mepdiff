@@ -1,0 +1,34 @@
+name: Feature request
+description: Propose a capability or a change to how a diff is reported.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: |
+        What question about a model change can you not answer today? Concrete
+        cases land better than abstract capabilities.
+      placeholder: "I cannot tell which terminals lost their connection to AHU-1."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behaviour
+      description: What mepdiff should report, and roughly how it should read.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - IFC adapter
+        - Revit adapter
+        - Topology / skeleton
+        - Identity matching
+        - Diff and severity
+        - Reporting / CLI
+        - CI integration
+        - Other

@@ -1,0 +1,15 @@
+# Normalise to LF in the repository. This is load-bearing, not housekeeping:
+# mepdiff's test strategy is byte-for-byte golden-file comparison, and CI runs a
+# Linux + Windows matrix. Without this, CRLF checkouts on Windows would fail
+# every golden test for reasons that have nothing to do with the code.
+* text=auto eol=lf
+
+# Fixtures and expected outputs are compared byte-for-byte. Never let these be
+# touched by EOL or encoding conversion.
+*.ifc   -text
+*.ifczip binary
+*.rvt   binary
+tests/fixtures/**/*.json -text
+
+# Keep generated/vendored files out of language stats and diff noise.
+*.json  linguist-language=JSON
