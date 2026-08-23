@@ -16,3 +16,6 @@ Start from [`0000-template.md`](0000-template.md).
 | [0002](0002-collapse-topology-before-diffing.md) | Collapse topology to a skeleton before diffing | Accepted |
 | [0003](0003-tiered-identity-matching.md) | Tiered identity matching with explicit confidence | Accepted |
 | [0004](0004-canonical-snapshot-representation.md) | A canonical, self-validating snapshot representation | Accepted |
+| [0005](0005-revit-as-the-first-adapter.md) | Revit is the first adapter, and IFC is deferred | Proposed |
+| [0006](0006-mepdiff-container-format.md) | A two-tier format — canonical JSON, wrapped in a `.mepdiff` container | Proposed |
+| [0007](0007-history-lives-in-existing-document-management.md) | History lives in the project's existing document management | Proposed |

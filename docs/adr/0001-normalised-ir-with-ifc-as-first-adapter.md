@@ -3,6 +3,10 @@
 - **Status:** Accepted
 - **Date:** 2026-08-16
 
+> **Note:** [ADR-0005](0005-revit-as-the-first-adapter.md) (Proposed) revisits
+> the adapter ordering decided here. The normalised IR, and the requirement
+> that it double as an archival record, are unaffected.
+
 ## Context
 
 The obvious first question for this project is "which format — IFC, or Revit, or
