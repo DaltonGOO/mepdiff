@@ -78,12 +78,11 @@ committed `.rvt`, run by hand, plus golden-file comparison of its *output*, whic
 CI does check. The untested-in-CI boundary is drawn tightly around the one
 component that cannot be tested on a GitHub runner.
 
-**Implementation sequence: pyRevit first, .NET add-in second.** A pyRevit
-extension gets the exporter into modellers' hands in days rather than weeks, and
-pyRevit is already installed across much of the target audience. A signed C#
-add-in is how it ships properly once the IR has stopped moving. This part of the
-decision is the least settled and the cheapest to revisit — the emitted bytes are
-what matter, and both routes emit the same ones.
+**The exporter is a C# add-in**, built against the Revit API and distributed as
+an installer. It is the form that can be signed, versioned against a Revit
+release matrix, and deployed by a firm's IT without asking every modeller to
+install a scripting environment first. It is also the form CI can compile and
+unit-test, which the alternatives are not.
 
 ## Consequences
 
@@ -96,10 +95,17 @@ what matter, and both routes emit the same ones.
   the record first.
 - **Windows stops being a courtesy in CI and becomes the primary target.** The
   matrix already covers it; now it covers the platform the adapter runs on.
-- **The exporter is not covered by CI, and that is a genuine loss.** It is
-  mitigated by keeping the exporter thin and by golden-testing its output, but a
-  regression in the exporter reaches a user before it reaches a test. This is the
-  real price of the decision and it should not be described as anything smaller.
+- **Part of the exporter is CI-testable, and the boundary is worth stating
+  precisely.** Revit API reference assemblies are available from NuGet, so a
+  `windows-latest` job can compile the add-in and unit-test everything that does
+  not touch a live document — canonicalisation, quantisation, JSON emission,
+  which is where the byte-level guarantees live. What CI cannot do is open a
+  model. So the untested surface is the traversal layer only: which elements are
+  read and which parameters are pulled off them.
+- **That untested surface is still a genuine loss.** A traversal regression
+  reaches a user before it reaches a test. It is mitigated by keeping the layer
+  thin and by golden-testing its output against committed models, and it should
+  not be described as anything smaller than it is.
 - **The cross-adapter conformance test from ADR-0001 goes away for now.** That
   test was the mechanism keeping the IR vendor-neutral, and without it Revit's
   model of the world can leak into the IR unchallenged. Two things hold the line
@@ -134,6 +140,14 @@ Autodesk's cloud, which sits badly beside CONTRIBUTING's rule about project
 models; it costs cloud credits and adds an Autodesk account as a dependency of
 the test suite; and it is infrastructure in service of a component that does not
 exist yet. Worth revisiting once the exporter is real and stable.
+
+**A pyRevit extension, either instead of or ahead of the add-in.** Faster to
+iterate, and already installed across much of the target audience. Rejected:
+it makes pyRevit a prerequisite for using mepdiff at all, which is a second
+thing to get installed and approved before anyone sees output, and it cannot be
+compiled or unit-tested in CI. Prototyping in it first was considered and
+dropped too — a throwaway exporter still has to solve canonicalisation, which is
+the hard part and the part that does not transfer.
 
 **A Dynamo graph instead of an add-in.** The lowest barrier of all for this
 audience. Rejected as the primary route: graphs are hard to version, hard to
